@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "";
+}
+
+<h2>Login</h2>
+
+<form method="post">
+    <div class="form-group">
+        <label for="username">username : </label>
+        <input type="text" id="username" name="username" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Login" class="btn btn-primary" />
+    </div>
+
+    @ViewBag.Message
+</form>
+

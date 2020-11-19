@@ -9,9 +9,13 @@ using System.Web.Mvc;
 
 namespace MVCDemo.Controllers
 {
+    [Authorize]
+    [Authorize(Roles = "PUBLIC")]
+
     public class ProductController : Controller
     {
         // GET: Product
+        
         public ActionResult Index()
         {
             ProductServices pds = new ProductServices();
