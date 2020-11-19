@@ -1,0 +1,58 @@
+﻿@model List<MVCDemo.ModelViews.ProductDetail>
+@{
+    ViewBag.Title = "Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Products</h2>
+
+<h4><a href="@Url.Action("Add", "Product")">Create New Product</a></h4>
+
+<table class="table table-hover table-responsive">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>price</th>
+            <th>category</th>
+            <th>created date</th>
+            <th>is active</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.product.id</td>
+                <td>@item.product.name</td>
+                <td>@item.product.price</td>
+                <td>@item.category_name</td>
+                <td>@item.product.created_date.ToString("dd MMM yyyy")</td>
+                <td>@item.product.is_active</td>
+                <td><a href="@Url.Action("Edit", "Product", new { id = item.product.id })">EDIT</a> / <a href="javascript:;" onclick="ConfirmDelete(@item.product.id);">DELETE</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<script>
+    function ConfirmDelete(id) {
+        if (!confirm('Do you want to delete id ' + id + '?'))
+            return;
+
+        var url = '@Url.Action("Delete", "Product")';
+        var params = {
+            id: id
+        };
+
+        $.post(url, params, function (data) {
+            console.log(data);
+            if (data == "OK") {
+                location.reload();
+            }
+            
+        });
+    }
+</script>

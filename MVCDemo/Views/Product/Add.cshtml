@@ -1,0 +1,50 @@
+﻿@model MVCDemo.ModelViews.ProductDetail
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Add Product</h2>
+
+<form method="post">
+    @Html.HiddenFor(Model => Model.product.id)
+    @Html.HiddenFor(Model => Model.product.created_date)
+    @Html.HiddenFor(Model => Model.product.created_by)
+    <div class="form-group">
+        <label for="name">name : </label>
+        @Html.TextBoxFor(Model => Model.product.name, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label for="description">description : </label>
+        @Html.TextBoxFor(Model => Model.product.description, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label for="price">price : </label>
+        @Html.TextBoxFor(Model => Model.product.price, new { @class = "form-control", type = "number" })
+    </div>
+    <div class="form-group">
+        <label for="category_id">category : </label>
+        @*<select class="form-control" id="category_id" name="category_id">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>*@
+
+        @Html.DropDownListFor(m => Model.product.category_id, Model.CategoryList, "Please Select", new { @class = "form-control" })
+
+    </div>
+    <div class="form-group">
+        @Html.CheckBoxFor(Model => Model.product.is_active)
+        <label class="form-check-label" for="is_active">
+            is active
+        </label>
+    </div>
+
+    <div class="form-group">
+        <input type="button" value="Cancel" class="btn btn-default" onclick="history.back();" />
+        <input type="submit" value="Submit" class="btn btn-primary" />
+    </div>
+</form>
+

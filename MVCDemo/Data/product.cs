@@ -19,7 +19,6 @@ namespace MVCDemo.Data
         public string name { get; set; }
         public string description { get; set; }
         public Nullable<decimal> price { get; set; }
-        public bool is_delete { get; set; }
         public bool is_active { get; set; }
         public System.DateTime created_date { get; set; }
         public string created_by { get; set; }

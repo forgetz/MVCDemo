@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="a14d17a9e0fc412ebfeb721fc9aa0f0f" Name="Diagram1">
         <EntityTypeShape EntityType="MVCDemoModel.category" Width="1.5" PointX="2.5" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="MVCDemoModel.product" Width="1.5" PointX="4.625" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVCDemoModel.product" Width="1.5" PointX="5" PointY="1.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
