@@ -33,15 +33,12 @@ namespace PGMenuWebservices.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("TRAFFIC")]
         public string SysCode {
             get {
                 return ((string)(this["SysCode"]));
-            }
-            set {
-                this["SysCode"] = value;
             }
         }
     }

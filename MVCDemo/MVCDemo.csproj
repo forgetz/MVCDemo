@@ -257,6 +257,12 @@
   <ItemGroup>
     <WebReferences Include="Web References\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PGMenuWebservices\PGMenuWebservices.csproj">
+      <Project>{5efdbe25-7081-4861-a87c-d425e237553a}</Project>
+      <Name>PGMenuWebservices</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

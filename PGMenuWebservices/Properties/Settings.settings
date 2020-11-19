@@ -5,7 +5,7 @@
     <Setting Name="PGMenuWebservices_pgmenuwebservice_UserAuthorization" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://developer.bangkokair.pg:10001/UserAuthorization.asmx</Value>
     </Setting>
-    <Setting Name="SysCode" Type="System.String" Scope="User">
+    <Setting Name="SysCode" Type="System.String" Scope="Application">
       <Value Profile="(Default)">TRAFFIC</Value>
     </Setting>
   </Settings>

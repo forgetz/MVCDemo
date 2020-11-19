@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PGMenuWebservices;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -38,26 +39,26 @@ namespace MVCDemo.Controllers
         [HttpPost]
         public ActionResult Login(string username)
         {
-            //var pgmenuService = new UserAuthorization.UserAuthorization();
-            //var sysCode = ConfigurationManager.AppSettings["SysCode"].ToString();
-            //var data = pgmenuService.checkUserAuthenticationNoPassword(sysCode, username, "", "");
-            //Session["pgmenudata"] = data;
+            var pgmenuService = new PGMenuService();
+            var sysCode = ConfigurationManager.AppSettings["SysCode"].ToString();
+            var data = pgmenuService.PGMenuCheckUserAuthenticationServiceNoPassword(username);
+            var groups = new System.Text.StringBuilder();
 
-            //if (data == null)
-            //{
-            //    ViewBag.Message = "Login Failed! Username or Password Invalid";
-            //    return View();
-            //}
+            if (data == null)
+            {
+                ViewBag.Message = "Login Failed! Username or Password Invalid";
+                return View();
+            }
 
-            //foreach (var item in data.groupUserNList)
-            //{
-            //    var group = item.group_code.ToUpper();
-            //    groups.Append("," + group);
-            //}
+            foreach (var item in data.groupUserNList)
+            {
+                var group = item.group_code.ToUpper();
+                groups.Append("," + group);
+            }
 
-            //string roles = "PUBLIC" + groups.ToString();
+            Session["pgmenudata"] = data;
+            string roles = "PUBLIC" + groups.ToString();
 
-            string roles = "PUBLIC";
             FormsAuthenticationTicket authTicket = new FormsAuthenticationTicket(1
                 , username
                 , DateTime.Now
@@ -70,13 +71,12 @@ namespace MVCDemo.Controllers
             Response.Cookies.Add(cookie);
             Response.Cookies.Add(new HttpCookie("username", username));
 
-            //var userInfo = pgmenuService.UserInformation(data.user_login);
+            var userInfo = pgmenuService.GetUserInformation(data.user_login);
 
-            //Response.Cookies.Add(new HttpCookie("userId", userInfo.userId));
-            //Response.Cookies.Add(new HttpCookie("login_fname", userInfo.nameeng));
-            //Response.Cookies.Add(new HttpCookie("login_lname", userInfo.surnameeng));
-            //Response.Cookies.Add(new HttpCookie("login_email", userInfo.Email));
-
+            Response.Cookies.Add(new HttpCookie("userId", userInfo.userId));
+            Response.Cookies.Add(new HttpCookie("login_fname", userInfo.nameeng));
+            Response.Cookies.Add(new HttpCookie("login_lname", userInfo.surnameeng));
+            Response.Cookies.Add(new HttpCookie("login_email", userInfo.Email));
 
             return RedirectToAction("Index");
         }
