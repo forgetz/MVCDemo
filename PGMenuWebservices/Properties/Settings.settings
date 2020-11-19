@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PGMenuWebservices.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="PGMenuWebservices_pgmenuwebservice_UserAuthorization" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://developer.bangkokair.pg:10001/UserAuthorization.asmx</Value>
+    </Setting>
+    <Setting Name="SysCode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">TRAFFIC</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

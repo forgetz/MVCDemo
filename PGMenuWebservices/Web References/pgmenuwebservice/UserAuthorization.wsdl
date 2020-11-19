@@ -1,0 +1,2978 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="checkUserAuthentication">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSysCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPWD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompanyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strStationCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkUserAuthenticationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="checkUserAuthenticationResult" type="tns:clsMenuAuthorization" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="clsMenuAuthorization">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AuthenMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CostCenter" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TitleThai" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="NameThai" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SurNameThai" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TitleEng" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Location" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CostCenterLocation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sex" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PositionEng" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DepartMent" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DepartMentName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DepartmentCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CostCenterName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MultiCostCenter">
+            <s:complexType>
+              <s:sequence>
+                <s:element ref="s:schema" />
+                <s:any />
+              </s:sequence>
+            </s:complexType>
+          </s:element>
+          <s:element minOccurs="1" maxOccurs="1" name="AuthenStatus" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="SysCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CompanyCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StationCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="user_login" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="user_password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="user_oldpassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="user_desc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="user_status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="admin_status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="user_ip" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="userauthen_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DSN_code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DSN_Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DSN_Login" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="user_login_informix" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="user_pwd_informix" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Gen_PGMenu" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="login_status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PersonID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="login_time" type="s:short" />
+          <s:element minOccurs="0" maxOccurs="1" name="SAPCostCenterCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ErrorEx" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="checkUserAuthenticationNoPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSysCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompanyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strStationCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkUserAuthenticationNoPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="checkUserAuthenticationNoPasswordResult" type="tns:clsMenuAuthorization" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkUserAuthentication2005">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSysCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPWD" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompanyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strStationCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkUserAuthentication2005Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="checkUserAuthentication2005Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkUserAuthentication2005Nopassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSysCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCompanyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strStationCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkUserAuthentication2005NopasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="checkUserAuthentication2005NopasswordResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserAuthorizeCtrl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSyscode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMncode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserLogin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserAuthorizeCtrlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserAuthorizeCtrlResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SystemCompany">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSyscode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SystemCompanyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SystemCompanyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SystemStation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strCompanyCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSysCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SystemStationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SystemStationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SystemURL">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserlogin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SystemURLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SystemURLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllSystem">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllSystemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllSystemResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SystemGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSysCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SystemGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SystemGroupResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserAuthorizeGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSysCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserlogin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserAuthorizeGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserAuthorizeGroupResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GroupUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSysCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGroupcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GroupUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GroupUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GroupUserN">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSysCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGroupcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GroupUserNResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GroupUserNResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GroupUserNDataSet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSysCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGroupcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GroupUserNDataSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GroupUserNDataSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenMenuForWebUI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSysCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserLogin" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenMenuForWebUIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GenMenuForWebUIResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mas_CostCenter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strDept" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mas_CostCenterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mas_CostCenterResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mas_CostCenter_ins">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PGCostCenterCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SAPCostCenterCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="updateby" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mas_CostCenter_insResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mas_CostCenter_insResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mas_CostCenter_upd">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PGCostCenterCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SAPCostCenterCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="updateby" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mas_CostCenter_updResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mas_CostCenter_updResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Mas_Department">
+        <s:complexType />
+      </s:element>
+      <s:element name="Mas_DepartmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Mas_DepartmentResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserInformationResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserStation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sys_code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="company_code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="User_login" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserStationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserStationResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenAuthorizeMenuGroupForWebUI">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSysCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGroupCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="chk" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="TypeCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenAuthorizeMenuGroupForWebUIResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GenAuthorizeMenuGroupForWebUIResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenAuthorizeMenuGroupForTreeview">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSysCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGroupCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="chk" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="TypeCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenAuthorizeMenuGroupForTreeviewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GenAuthorizeMenuGroupForTreeviewResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Announcement">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSysCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AnnouncementResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AnnouncementResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserSystem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strSysCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserSystemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserSystemResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkUserAuthenticationAfisOnSite">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPWD" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkUserAuthenticationAfisOnSiteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="checkUserAuthenticationAfisOnSiteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckUserEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSurname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckUserEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckUserEmailResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PGToSAPCostCenterMapping">
+        <s:complexType />
+      </s:element>
+      <s:element name="PGToSAPCostCenterMappingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PGToSAPCostCenterMappingResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckCostCenter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckCostCenterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckCostCenterResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserInDepartment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Keyword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserInDepartmentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserInDepartmentResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetButtonControl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="System_code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Group_code" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Menu_code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetButtonControlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetButtonControlResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkUserAD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserLogin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPWD" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkUserADResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="checkUserADResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkUserAuthenSystem">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="systrust" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkUserAuthenSystemResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="checkUserAuthenSystemResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="clsMenuAuthorization" nillable="true" type="tns:clsMenuAuthorization" />
+      <s:element name="DataSet" nillable="true">
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="s:schema" />
+            <s:any />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="boolean" type="s:boolean" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="checkUserAuthenticationSoapIn">
+    <wsdl:part name="parameters" element="tns:checkUserAuthentication" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthenticationSoapOut">
+    <wsdl:part name="parameters" element="tns:checkUserAuthenticationResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthenticationNoPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:checkUserAuthenticationNoPassword" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthenticationNoPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:checkUserAuthenticationNoPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthentication2005SoapIn">
+    <wsdl:part name="parameters" element="tns:checkUserAuthentication2005" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthentication2005SoapOut">
+    <wsdl:part name="parameters" element="tns:checkUserAuthentication2005Response" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthentication2005NopasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:checkUserAuthentication2005Nopassword" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthentication2005NopasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:checkUserAuthentication2005NopasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserAuthorizeCtrlSoapIn">
+    <wsdl:part name="parameters" element="tns:UserAuthorizeCtrl" />
+  </wsdl:message>
+  <wsdl:message name="UserAuthorizeCtrlSoapOut">
+    <wsdl:part name="parameters" element="tns:UserAuthorizeCtrlResponse" />
+  </wsdl:message>
+  <wsdl:message name="SystemCompanySoapIn">
+    <wsdl:part name="parameters" element="tns:SystemCompany" />
+  </wsdl:message>
+  <wsdl:message name="SystemCompanySoapOut">
+    <wsdl:part name="parameters" element="tns:SystemCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="SystemStationSoapIn">
+    <wsdl:part name="parameters" element="tns:SystemStation" />
+  </wsdl:message>
+  <wsdl:message name="SystemStationSoapOut">
+    <wsdl:part name="parameters" element="tns:SystemStationResponse" />
+  </wsdl:message>
+  <wsdl:message name="SystemURLSoapIn">
+    <wsdl:part name="parameters" element="tns:SystemURL" />
+  </wsdl:message>
+  <wsdl:message name="SystemURLSoapOut">
+    <wsdl:part name="parameters" element="tns:SystemURLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSystemSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllSystem" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSystemSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllSystemResponse" />
+  </wsdl:message>
+  <wsdl:message name="SystemGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:SystemGroup" />
+  </wsdl:message>
+  <wsdl:message name="SystemGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:SystemGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserAuthorizeGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:UserAuthorizeGroup" />
+  </wsdl:message>
+  <wsdl:message name="UserAuthorizeGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:UserAuthorizeGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="GroupUserSoapIn">
+    <wsdl:part name="parameters" element="tns:GroupUser" />
+  </wsdl:message>
+  <wsdl:message name="GroupUserSoapOut">
+    <wsdl:part name="parameters" element="tns:GroupUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="GroupUserNSoapIn">
+    <wsdl:part name="parameters" element="tns:GroupUserN" />
+  </wsdl:message>
+  <wsdl:message name="GroupUserNSoapOut">
+    <wsdl:part name="parameters" element="tns:GroupUserNResponse" />
+  </wsdl:message>
+  <wsdl:message name="GroupUserNDataSetSoapIn">
+    <wsdl:part name="parameters" element="tns:GroupUserNDataSet" />
+  </wsdl:message>
+  <wsdl:message name="GroupUserNDataSetSoapOut">
+    <wsdl:part name="parameters" element="tns:GroupUserNDataSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenMenuForWebUISoapIn">
+    <wsdl:part name="parameters" element="tns:GenMenuForWebUI" />
+  </wsdl:message>
+  <wsdl:message name="GenMenuForWebUISoapOut">
+    <wsdl:part name="parameters" element="tns:GenMenuForWebUIResponse" />
+  </wsdl:message>
+  <wsdl:message name="Mas_CostCenterSoapIn">
+    <wsdl:part name="parameters" element="tns:Mas_CostCenter" />
+  </wsdl:message>
+  <wsdl:message name="Mas_CostCenterSoapOut">
+    <wsdl:part name="parameters" element="tns:Mas_CostCenterResponse" />
+  </wsdl:message>
+  <wsdl:message name="Mas_CostCenter_insSoapIn">
+    <wsdl:part name="parameters" element="tns:Mas_CostCenter_ins" />
+  </wsdl:message>
+  <wsdl:message name="Mas_CostCenter_insSoapOut">
+    <wsdl:part name="parameters" element="tns:Mas_CostCenter_insResponse" />
+  </wsdl:message>
+  <wsdl:message name="Mas_CostCenter_updSoapIn">
+    <wsdl:part name="parameters" element="tns:Mas_CostCenter_upd" />
+  </wsdl:message>
+  <wsdl:message name="Mas_CostCenter_updSoapOut">
+    <wsdl:part name="parameters" element="tns:Mas_CostCenter_updResponse" />
+  </wsdl:message>
+  <wsdl:message name="Mas_DepartmentSoapIn">
+    <wsdl:part name="parameters" element="tns:Mas_Department" />
+  </wsdl:message>
+  <wsdl:message name="Mas_DepartmentSoapOut">
+    <wsdl:part name="parameters" element="tns:Mas_DepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:UserInformation" />
+  </wsdl:message>
+  <wsdl:message name="UserInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:UserInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserStationSoapIn">
+    <wsdl:part name="parameters" element="tns:UserStation" />
+  </wsdl:message>
+  <wsdl:message name="UserStationSoapOut">
+    <wsdl:part name="parameters" element="tns:UserStationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenAuthorizeMenuGroupForWebUISoapIn">
+    <wsdl:part name="parameters" element="tns:GenAuthorizeMenuGroupForWebUI" />
+  </wsdl:message>
+  <wsdl:message name="GenAuthorizeMenuGroupForWebUISoapOut">
+    <wsdl:part name="parameters" element="tns:GenAuthorizeMenuGroupForWebUIResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenAuthorizeMenuGroupForTreeviewSoapIn">
+    <wsdl:part name="parameters" element="tns:GenAuthorizeMenuGroupForTreeview" />
+  </wsdl:message>
+  <wsdl:message name="GenAuthorizeMenuGroupForTreeviewSoapOut">
+    <wsdl:part name="parameters" element="tns:GenAuthorizeMenuGroupForTreeviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="AnnouncementSoapIn">
+    <wsdl:part name="parameters" element="tns:Announcement" />
+  </wsdl:message>
+  <wsdl:message name="AnnouncementSoapOut">
+    <wsdl:part name="parameters" element="tns:AnnouncementResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserSystemSoapIn">
+    <wsdl:part name="parameters" element="tns:UserSystem" />
+  </wsdl:message>
+  <wsdl:message name="UserSystemSoapOut">
+    <wsdl:part name="parameters" element="tns:UserSystemResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthenticationAfisOnSiteSoapIn">
+    <wsdl:part name="parameters" element="tns:checkUserAuthenticationAfisOnSite" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthenticationAfisOnSiteSoapOut">
+    <wsdl:part name="parameters" element="tns:checkUserAuthenticationAfisOnSiteResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckUserEmail" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckUserEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="PGToSAPCostCenterMappingSoapIn">
+    <wsdl:part name="parameters" element="tns:PGToSAPCostCenterMapping" />
+  </wsdl:message>
+  <wsdl:message name="PGToSAPCostCenterMappingSoapOut">
+    <wsdl:part name="parameters" element="tns:PGToSAPCostCenterMappingResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckCostCenterSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckCostCenter" />
+  </wsdl:message>
+  <wsdl:message name="CheckCostCenterSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckCostCenterResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserInDepartmentSoapIn">
+    <wsdl:part name="parameters" element="tns:UserInDepartment" />
+  </wsdl:message>
+  <wsdl:message name="UserInDepartmentSoapOut">
+    <wsdl:part name="parameters" element="tns:UserInDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetButtonControlSoapIn">
+    <wsdl:part name="parameters" element="tns:GetButtonControl" />
+  </wsdl:message>
+  <wsdl:message name="GetButtonControlSoapOut">
+    <wsdl:part name="parameters" element="tns:GetButtonControlResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkUserADSoapIn">
+    <wsdl:part name="parameters" element="tns:checkUserAD" />
+  </wsdl:message>
+  <wsdl:message name="checkUserADSoapOut">
+    <wsdl:part name="parameters" element="tns:checkUserADResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthenSystemSoapIn">
+    <wsdl:part name="parameters" element="tns:checkUserAuthenSystem" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthenSystemSoapOut">
+    <wsdl:part name="parameters" element="tns:checkUserAuthenSystemResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthenticationHttpGetIn">
+    <wsdl:part name="strSysCode" type="s:string" />
+    <wsdl:part name="strUserLogin" type="s:string" />
+    <wsdl:part name="strPWD" type="s:string" />
+    <wsdl:part name="strCompanyCode" type="s:string" />
+    <wsdl:part name="strStationCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthenticationHttpGetOut">
+    <wsdl:part name="Body" element="tns:clsMenuAuthorization" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthenticationNoPasswordHttpGetIn">
+    <wsdl:part name="strSysCode" type="s:string" />
+    <wsdl:part name="strUserLogin" type="s:string" />
+    <wsdl:part name="strCompanyCode" type="s:string" />
+    <wsdl:part name="strStationCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthenticationNoPasswordHttpGetOut">
+    <wsdl:part name="Body" element="tns:clsMenuAuthorization" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthentication2005HttpGetIn">
+    <wsdl:part name="strSysCode" type="s:string" />
+    <wsdl:part name="strUserLogin" type="s:string" />
+    <wsdl:part name="strPWD" type="s:string" />
+    <wsdl:part name="strCompanyCode" type="s:string" />
+    <wsdl:part name="strStationCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthentication2005HttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthentication2005NopasswordHttpGetIn">
+    <wsdl:part name="strSysCode" type="s:string" />
+    <wsdl:part name="strUserLogin" type="s:string" />
+    <wsdl:part name="strCompanyCode" type="s:string" />
+    <wsdl:part name="strStationCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthentication2005NopasswordHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="UserAuthorizeCtrlHttpGetIn">
+    <wsdl:part name="strSyscode" type="s:string" />
+    <wsdl:part name="strMncode" type="s:string" />
+    <wsdl:part name="strUserLogin" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UserAuthorizeCtrlHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SystemCompanyHttpGetIn">
+    <wsdl:part name="strSyscode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SystemCompanyHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SystemStationHttpGetIn">
+    <wsdl:part name="strCompanyCode" type="s:string" />
+    <wsdl:part name="strSysCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SystemStationHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SystemURLHttpGetIn">
+    <wsdl:part name="strUserlogin" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SystemURLHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSystemHttpGetIn" />
+  <wsdl:message name="GetAllSystemHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SystemGroupHttpGetIn">
+    <wsdl:part name="strSysCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SystemGroupHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UserAuthorizeGroupHttpGetIn">
+    <wsdl:part name="strSysCode" type="s:string" />
+    <wsdl:part name="strUserlogin" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UserAuthorizeGroupHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GroupUserHttpGetIn">
+    <wsdl:part name="strSysCode" type="s:string" />
+    <wsdl:part name="strUserLogin" type="s:string" />
+    <wsdl:part name="strGroupcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GroupUserHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GroupUserNHttpGetIn">
+    <wsdl:part name="strSysCode" type="s:string" />
+    <wsdl:part name="strUserLogin" type="s:string" />
+    <wsdl:part name="strGroupcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GroupUserNHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GroupUserNDataSetHttpGetIn">
+    <wsdl:part name="strSysCode" type="s:string" />
+    <wsdl:part name="strUserLogin" type="s:string" />
+    <wsdl:part name="strGroupcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GroupUserNDataSetHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GenMenuForWebUIHttpGetIn">
+    <wsdl:part name="strSysCode" type="s:string" />
+    <wsdl:part name="strUserLogin" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GenMenuForWebUIHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Mas_CostCenterHttpGetIn">
+    <wsdl:part name="strDept" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Mas_CostCenterHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Mas_CostCenter_insHttpGetIn">
+    <wsdl:part name="PGCostCenterCode" type="s:string" />
+    <wsdl:part name="SAPCostCenterCode" type="s:string" />
+    <wsdl:part name="updateby" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Mas_CostCenter_insHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Mas_CostCenter_updHttpGetIn">
+    <wsdl:part name="PGCostCenterCode" type="s:string" />
+    <wsdl:part name="SAPCostCenterCode" type="s:string" />
+    <wsdl:part name="updateby" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Mas_CostCenter_updHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Mas_DepartmentHttpGetIn" />
+  <wsdl:message name="Mas_DepartmentHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="UserInformationHttpGetIn">
+    <wsdl:part name="strUserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UserInformationHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="UserStationHttpGetIn">
+    <wsdl:part name="sys_code" type="s:string" />
+    <wsdl:part name="company_code" type="s:string" />
+    <wsdl:part name="User_login" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UserStationHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GenAuthorizeMenuGroupForWebUIHttpGetIn">
+    <wsdl:part name="strSysCode" type="s:string" />
+    <wsdl:part name="strGroupCode" type="s:string" />
+    <wsdl:part name="chk" type="s:string" />
+    <wsdl:part name="TypeCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GenAuthorizeMenuGroupForWebUIHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GenAuthorizeMenuGroupForTreeviewHttpGetIn">
+    <wsdl:part name="strSysCode" type="s:string" />
+    <wsdl:part name="strGroupCode" type="s:string" />
+    <wsdl:part name="chk" type="s:string" />
+    <wsdl:part name="TypeCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GenAuthorizeMenuGroupForTreeviewHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="AnnouncementHttpGetIn">
+    <wsdl:part name="strSysCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AnnouncementHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UserSystemHttpGetIn">
+    <wsdl:part name="strSysCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UserSystemHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthenticationAfisOnSiteHttpGetIn">
+    <wsdl:part name="strUserLogin" type="s:string" />
+    <wsdl:part name="strPWD" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthenticationAfisOnSiteHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserEmailHttpGetIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSurname" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserEmailHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="PGToSAPCostCenterMappingHttpGetIn" />
+  <wsdl:message name="PGToSAPCostCenterMappingHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="CheckCostCenterHttpGetIn">
+    <wsdl:part name="cc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckCostCenterHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="UserInDepartmentHttpGetIn">
+    <wsdl:part name="Keyword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UserInDepartmentHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetButtonControlHttpGetIn">
+    <wsdl:part name="System_code" type="s:string" />
+    <wsdl:part name="Group_code" type="s:string" />
+    <wsdl:part name="Menu_code" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetButtonControlHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="checkUserADHttpGetIn">
+    <wsdl:part name="strUserLogin" type="s:string" />
+    <wsdl:part name="strPWD" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="checkUserADHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthenSystemHttpGetIn">
+    <wsdl:part name="systrust" type="s:string" />
+    <wsdl:part name="username" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthenSystemHttpGetOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthenticationHttpPostIn">
+    <wsdl:part name="strSysCode" type="s:string" />
+    <wsdl:part name="strUserLogin" type="s:string" />
+    <wsdl:part name="strPWD" type="s:string" />
+    <wsdl:part name="strCompanyCode" type="s:string" />
+    <wsdl:part name="strStationCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthenticationHttpPostOut">
+    <wsdl:part name="Body" element="tns:clsMenuAuthorization" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthenticationNoPasswordHttpPostIn">
+    <wsdl:part name="strSysCode" type="s:string" />
+    <wsdl:part name="strUserLogin" type="s:string" />
+    <wsdl:part name="strCompanyCode" type="s:string" />
+    <wsdl:part name="strStationCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthenticationNoPasswordHttpPostOut">
+    <wsdl:part name="Body" element="tns:clsMenuAuthorization" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthentication2005HttpPostIn">
+    <wsdl:part name="strSysCode" type="s:string" />
+    <wsdl:part name="strUserLogin" type="s:string" />
+    <wsdl:part name="strPWD" type="s:string" />
+    <wsdl:part name="strCompanyCode" type="s:string" />
+    <wsdl:part name="strStationCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthentication2005HttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthentication2005NopasswordHttpPostIn">
+    <wsdl:part name="strSysCode" type="s:string" />
+    <wsdl:part name="strUserLogin" type="s:string" />
+    <wsdl:part name="strCompanyCode" type="s:string" />
+    <wsdl:part name="strStationCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthentication2005NopasswordHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="UserAuthorizeCtrlHttpPostIn">
+    <wsdl:part name="strSyscode" type="s:string" />
+    <wsdl:part name="strMncode" type="s:string" />
+    <wsdl:part name="strUserLogin" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UserAuthorizeCtrlHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SystemCompanyHttpPostIn">
+    <wsdl:part name="strSyscode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SystemCompanyHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SystemStationHttpPostIn">
+    <wsdl:part name="strCompanyCode" type="s:string" />
+    <wsdl:part name="strSysCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SystemStationHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SystemURLHttpPostIn">
+    <wsdl:part name="strUserlogin" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SystemURLHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSystemHttpPostIn" />
+  <wsdl:message name="GetAllSystemHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SystemGroupHttpPostIn">
+    <wsdl:part name="strSysCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SystemGroupHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UserAuthorizeGroupHttpPostIn">
+    <wsdl:part name="strSysCode" type="s:string" />
+    <wsdl:part name="strUserlogin" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UserAuthorizeGroupHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GroupUserHttpPostIn">
+    <wsdl:part name="strSysCode" type="s:string" />
+    <wsdl:part name="strUserLogin" type="s:string" />
+    <wsdl:part name="strGroupcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GroupUserHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GroupUserNHttpPostIn">
+    <wsdl:part name="strSysCode" type="s:string" />
+    <wsdl:part name="strUserLogin" type="s:string" />
+    <wsdl:part name="strGroupcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GroupUserNHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GroupUserNDataSetHttpPostIn">
+    <wsdl:part name="strSysCode" type="s:string" />
+    <wsdl:part name="strUserLogin" type="s:string" />
+    <wsdl:part name="strGroupcode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GroupUserNDataSetHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GenMenuForWebUIHttpPostIn">
+    <wsdl:part name="strSysCode" type="s:string" />
+    <wsdl:part name="strUserLogin" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GenMenuForWebUIHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Mas_CostCenterHttpPostIn">
+    <wsdl:part name="strDept" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Mas_CostCenterHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Mas_CostCenter_insHttpPostIn">
+    <wsdl:part name="PGCostCenterCode" type="s:string" />
+    <wsdl:part name="SAPCostCenterCode" type="s:string" />
+    <wsdl:part name="updateby" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Mas_CostCenter_insHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Mas_CostCenter_updHttpPostIn">
+    <wsdl:part name="PGCostCenterCode" type="s:string" />
+    <wsdl:part name="SAPCostCenterCode" type="s:string" />
+    <wsdl:part name="updateby" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Mas_CostCenter_updHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="Mas_DepartmentHttpPostIn" />
+  <wsdl:message name="Mas_DepartmentHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="UserInformationHttpPostIn">
+    <wsdl:part name="strUserID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UserInformationHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="UserStationHttpPostIn">
+    <wsdl:part name="sys_code" type="s:string" />
+    <wsdl:part name="company_code" type="s:string" />
+    <wsdl:part name="User_login" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UserStationHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GenAuthorizeMenuGroupForWebUIHttpPostIn">
+    <wsdl:part name="strSysCode" type="s:string" />
+    <wsdl:part name="strGroupCode" type="s:string" />
+    <wsdl:part name="chk" type="s:string" />
+    <wsdl:part name="TypeCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GenAuthorizeMenuGroupForWebUIHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GenAuthorizeMenuGroupForTreeviewHttpPostIn">
+    <wsdl:part name="strSysCode" type="s:string" />
+    <wsdl:part name="strGroupCode" type="s:string" />
+    <wsdl:part name="chk" type="s:string" />
+    <wsdl:part name="TypeCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GenAuthorizeMenuGroupForTreeviewHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="AnnouncementHttpPostIn">
+    <wsdl:part name="strSysCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AnnouncementHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UserSystemHttpPostIn">
+    <wsdl:part name="strSysCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UserSystemHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthenticationAfisOnSiteHttpPostIn">
+    <wsdl:part name="strUserLogin" type="s:string" />
+    <wsdl:part name="strPWD" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthenticationAfisOnSiteHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserEmailHttpPostIn">
+    <wsdl:part name="strName" type="s:string" />
+    <wsdl:part name="strSurname" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckUserEmailHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="PGToSAPCostCenterMappingHttpPostIn" />
+  <wsdl:message name="PGToSAPCostCenterMappingHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="CheckCostCenterHttpPostIn">
+    <wsdl:part name="cc" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckCostCenterHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="UserInDepartmentHttpPostIn">
+    <wsdl:part name="Keyword" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UserInDepartmentHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="GetButtonControlHttpPostIn">
+    <wsdl:part name="System_code" type="s:string" />
+    <wsdl:part name="Group_code" type="s:string" />
+    <wsdl:part name="Menu_code" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetButtonControlHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:message name="checkUserADHttpPostIn">
+    <wsdl:part name="strUserLogin" type="s:string" />
+    <wsdl:part name="strPWD" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="checkUserADHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthenSystemHttpPostIn">
+    <wsdl:part name="systrust" type="s:string" />
+    <wsdl:part name="username" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="checkUserAuthenSystemHttpPostOut">
+    <wsdl:part name="Body" element="tns:DataSet" />
+  </wsdl:message>
+  <wsdl:portType name="UserAuthorizationSoap">
+    <wsdl:operation name="checkUserAuthentication">
+      <wsdl:input message="tns:checkUserAuthenticationSoapIn" />
+      <wsdl:output message="tns:checkUserAuthenticationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthenticationNoPassword">
+      <wsdl:input message="tns:checkUserAuthenticationNoPasswordSoapIn" />
+      <wsdl:output message="tns:checkUserAuthenticationNoPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthentication2005">
+      <wsdl:input message="tns:checkUserAuthentication2005SoapIn" />
+      <wsdl:output message="tns:checkUserAuthentication2005SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthentication2005Nopassword">
+      <wsdl:input message="tns:checkUserAuthentication2005NopasswordSoapIn" />
+      <wsdl:output message="tns:checkUserAuthentication2005NopasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserAuthorizeCtrl">
+      <wsdl:input message="tns:UserAuthorizeCtrlSoapIn" />
+      <wsdl:output message="tns:UserAuthorizeCtrlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemCompany">
+      <wsdl:input message="tns:SystemCompanySoapIn" />
+      <wsdl:output message="tns:SystemCompanySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemStation">
+      <wsdl:input message="tns:SystemStationSoapIn" />
+      <wsdl:output message="tns:SystemStationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemURL">
+      <wsdl:input message="tns:SystemURLSoapIn" />
+      <wsdl:output message="tns:SystemURLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSystem">
+      <wsdl:input message="tns:GetAllSystemSoapIn" />
+      <wsdl:output message="tns:GetAllSystemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemGroup">
+      <wsdl:input message="tns:SystemGroupSoapIn" />
+      <wsdl:output message="tns:SystemGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserAuthorizeGroup">
+      <wsdl:input message="tns:UserAuthorizeGroupSoapIn" />
+      <wsdl:output message="tns:UserAuthorizeGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GroupUser">
+      <wsdl:input message="tns:GroupUserSoapIn" />
+      <wsdl:output message="tns:GroupUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GroupUserN">
+      <wsdl:input message="tns:GroupUserNSoapIn" />
+      <wsdl:output message="tns:GroupUserNSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GroupUserNDataSet">
+      <wsdl:input message="tns:GroupUserNDataSetSoapIn" />
+      <wsdl:output message="tns:GroupUserNDataSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenMenuForWebUI">
+      <wsdl:input message="tns:GenMenuForWebUISoapIn" />
+      <wsdl:output message="tns:GenMenuForWebUISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mas_CostCenter">
+      <wsdl:input message="tns:Mas_CostCenterSoapIn" />
+      <wsdl:output message="tns:Mas_CostCenterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mas_CostCenter_ins">
+      <wsdl:input message="tns:Mas_CostCenter_insSoapIn" />
+      <wsdl:output message="tns:Mas_CostCenter_insSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mas_CostCenter_upd">
+      <wsdl:input message="tns:Mas_CostCenter_updSoapIn" />
+      <wsdl:output message="tns:Mas_CostCenter_updSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mas_Department">
+      <wsdl:input message="tns:Mas_DepartmentSoapIn" />
+      <wsdl:output message="tns:Mas_DepartmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserInformation">
+      <wsdl:input message="tns:UserInformationSoapIn" />
+      <wsdl:output message="tns:UserInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserStation">
+      <wsdl:input message="tns:UserStationSoapIn" />
+      <wsdl:output message="tns:UserStationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenAuthorizeMenuGroupForWebUI">
+      <wsdl:input message="tns:GenAuthorizeMenuGroupForWebUISoapIn" />
+      <wsdl:output message="tns:GenAuthorizeMenuGroupForWebUISoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenAuthorizeMenuGroupForTreeview">
+      <wsdl:input message="tns:GenAuthorizeMenuGroupForTreeviewSoapIn" />
+      <wsdl:output message="tns:GenAuthorizeMenuGroupForTreeviewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Announcement">
+      <wsdl:input message="tns:AnnouncementSoapIn" />
+      <wsdl:output message="tns:AnnouncementSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserSystem">
+      <wsdl:input message="tns:UserSystemSoapIn" />
+      <wsdl:output message="tns:UserSystemSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthenticationAfisOnSite">
+      <wsdl:input message="tns:checkUserAuthenticationAfisOnSiteSoapIn" />
+      <wsdl:output message="tns:checkUserAuthenticationAfisOnSiteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserEmail">
+      <wsdl:input message="tns:CheckUserEmailSoapIn" />
+      <wsdl:output message="tns:CheckUserEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PGToSAPCostCenterMapping">
+      <wsdl:input message="tns:PGToSAPCostCenterMappingSoapIn" />
+      <wsdl:output message="tns:PGToSAPCostCenterMappingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCostCenter">
+      <wsdl:input message="tns:CheckCostCenterSoapIn" />
+      <wsdl:output message="tns:CheckCostCenterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserInDepartment">
+      <wsdl:input message="tns:UserInDepartmentSoapIn" />
+      <wsdl:output message="tns:UserInDepartmentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetButtonControl">
+      <wsdl:input message="tns:GetButtonControlSoapIn" />
+      <wsdl:output message="tns:GetButtonControlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAD">
+      <wsdl:input message="tns:checkUserADSoapIn" />
+      <wsdl:output message="tns:checkUserADSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthenSystem">
+      <wsdl:input message="tns:checkUserAuthenSystemSoapIn" />
+      <wsdl:output message="tns:checkUserAuthenSystemSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="UserAuthorizationHttpGet">
+    <wsdl:operation name="checkUserAuthentication">
+      <wsdl:input message="tns:checkUserAuthenticationHttpGetIn" />
+      <wsdl:output message="tns:checkUserAuthenticationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthenticationNoPassword">
+      <wsdl:input message="tns:checkUserAuthenticationNoPasswordHttpGetIn" />
+      <wsdl:output message="tns:checkUserAuthenticationNoPasswordHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthentication2005">
+      <wsdl:input message="tns:checkUserAuthentication2005HttpGetIn" />
+      <wsdl:output message="tns:checkUserAuthentication2005HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthentication2005Nopassword">
+      <wsdl:input message="tns:checkUserAuthentication2005NopasswordHttpGetIn" />
+      <wsdl:output message="tns:checkUserAuthentication2005NopasswordHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserAuthorizeCtrl">
+      <wsdl:input message="tns:UserAuthorizeCtrlHttpGetIn" />
+      <wsdl:output message="tns:UserAuthorizeCtrlHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemCompany">
+      <wsdl:input message="tns:SystemCompanyHttpGetIn" />
+      <wsdl:output message="tns:SystemCompanyHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemStation">
+      <wsdl:input message="tns:SystemStationHttpGetIn" />
+      <wsdl:output message="tns:SystemStationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemURL">
+      <wsdl:input message="tns:SystemURLHttpGetIn" />
+      <wsdl:output message="tns:SystemURLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSystem">
+      <wsdl:input message="tns:GetAllSystemHttpGetIn" />
+      <wsdl:output message="tns:GetAllSystemHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemGroup">
+      <wsdl:input message="tns:SystemGroupHttpGetIn" />
+      <wsdl:output message="tns:SystemGroupHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserAuthorizeGroup">
+      <wsdl:input message="tns:UserAuthorizeGroupHttpGetIn" />
+      <wsdl:output message="tns:UserAuthorizeGroupHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GroupUser">
+      <wsdl:input message="tns:GroupUserHttpGetIn" />
+      <wsdl:output message="tns:GroupUserHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GroupUserN">
+      <wsdl:input message="tns:GroupUserNHttpGetIn" />
+      <wsdl:output message="tns:GroupUserNHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GroupUserNDataSet">
+      <wsdl:input message="tns:GroupUserNDataSetHttpGetIn" />
+      <wsdl:output message="tns:GroupUserNDataSetHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenMenuForWebUI">
+      <wsdl:input message="tns:GenMenuForWebUIHttpGetIn" />
+      <wsdl:output message="tns:GenMenuForWebUIHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mas_CostCenter">
+      <wsdl:input message="tns:Mas_CostCenterHttpGetIn" />
+      <wsdl:output message="tns:Mas_CostCenterHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mas_CostCenter_ins">
+      <wsdl:input message="tns:Mas_CostCenter_insHttpGetIn" />
+      <wsdl:output message="tns:Mas_CostCenter_insHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mas_CostCenter_upd">
+      <wsdl:input message="tns:Mas_CostCenter_updHttpGetIn" />
+      <wsdl:output message="tns:Mas_CostCenter_updHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mas_Department">
+      <wsdl:input message="tns:Mas_DepartmentHttpGetIn" />
+      <wsdl:output message="tns:Mas_DepartmentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserInformation">
+      <wsdl:input message="tns:UserInformationHttpGetIn" />
+      <wsdl:output message="tns:UserInformationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserStation">
+      <wsdl:input message="tns:UserStationHttpGetIn" />
+      <wsdl:output message="tns:UserStationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenAuthorizeMenuGroupForWebUI">
+      <wsdl:input message="tns:GenAuthorizeMenuGroupForWebUIHttpGetIn" />
+      <wsdl:output message="tns:GenAuthorizeMenuGroupForWebUIHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenAuthorizeMenuGroupForTreeview">
+      <wsdl:input message="tns:GenAuthorizeMenuGroupForTreeviewHttpGetIn" />
+      <wsdl:output message="tns:GenAuthorizeMenuGroupForTreeviewHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Announcement">
+      <wsdl:input message="tns:AnnouncementHttpGetIn" />
+      <wsdl:output message="tns:AnnouncementHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserSystem">
+      <wsdl:input message="tns:UserSystemHttpGetIn" />
+      <wsdl:output message="tns:UserSystemHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthenticationAfisOnSite">
+      <wsdl:input message="tns:checkUserAuthenticationAfisOnSiteHttpGetIn" />
+      <wsdl:output message="tns:checkUserAuthenticationAfisOnSiteHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserEmail">
+      <wsdl:input message="tns:CheckUserEmailHttpGetIn" />
+      <wsdl:output message="tns:CheckUserEmailHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PGToSAPCostCenterMapping">
+      <wsdl:input message="tns:PGToSAPCostCenterMappingHttpGetIn" />
+      <wsdl:output message="tns:PGToSAPCostCenterMappingHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCostCenter">
+      <wsdl:input message="tns:CheckCostCenterHttpGetIn" />
+      <wsdl:output message="tns:CheckCostCenterHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserInDepartment">
+      <wsdl:input message="tns:UserInDepartmentHttpGetIn" />
+      <wsdl:output message="tns:UserInDepartmentHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetButtonControl">
+      <wsdl:input message="tns:GetButtonControlHttpGetIn" />
+      <wsdl:output message="tns:GetButtonControlHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAD">
+      <wsdl:input message="tns:checkUserADHttpGetIn" />
+      <wsdl:output message="tns:checkUserADHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthenSystem">
+      <wsdl:input message="tns:checkUserAuthenSystemHttpGetIn" />
+      <wsdl:output message="tns:checkUserAuthenSystemHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="UserAuthorizationHttpPost">
+    <wsdl:operation name="checkUserAuthentication">
+      <wsdl:input message="tns:checkUserAuthenticationHttpPostIn" />
+      <wsdl:output message="tns:checkUserAuthenticationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthenticationNoPassword">
+      <wsdl:input message="tns:checkUserAuthenticationNoPasswordHttpPostIn" />
+      <wsdl:output message="tns:checkUserAuthenticationNoPasswordHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthentication2005">
+      <wsdl:input message="tns:checkUserAuthentication2005HttpPostIn" />
+      <wsdl:output message="tns:checkUserAuthentication2005HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthentication2005Nopassword">
+      <wsdl:input message="tns:checkUserAuthentication2005NopasswordHttpPostIn" />
+      <wsdl:output message="tns:checkUserAuthentication2005NopasswordHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserAuthorizeCtrl">
+      <wsdl:input message="tns:UserAuthorizeCtrlHttpPostIn" />
+      <wsdl:output message="tns:UserAuthorizeCtrlHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemCompany">
+      <wsdl:input message="tns:SystemCompanyHttpPostIn" />
+      <wsdl:output message="tns:SystemCompanyHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemStation">
+      <wsdl:input message="tns:SystemStationHttpPostIn" />
+      <wsdl:output message="tns:SystemStationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemURL">
+      <wsdl:input message="tns:SystemURLHttpPostIn" />
+      <wsdl:output message="tns:SystemURLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSystem">
+      <wsdl:input message="tns:GetAllSystemHttpPostIn" />
+      <wsdl:output message="tns:GetAllSystemHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SystemGroup">
+      <wsdl:input message="tns:SystemGroupHttpPostIn" />
+      <wsdl:output message="tns:SystemGroupHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserAuthorizeGroup">
+      <wsdl:input message="tns:UserAuthorizeGroupHttpPostIn" />
+      <wsdl:output message="tns:UserAuthorizeGroupHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GroupUser">
+      <wsdl:input message="tns:GroupUserHttpPostIn" />
+      <wsdl:output message="tns:GroupUserHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GroupUserN">
+      <wsdl:input message="tns:GroupUserNHttpPostIn" />
+      <wsdl:output message="tns:GroupUserNHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GroupUserNDataSet">
+      <wsdl:input message="tns:GroupUserNDataSetHttpPostIn" />
+      <wsdl:output message="tns:GroupUserNDataSetHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenMenuForWebUI">
+      <wsdl:input message="tns:GenMenuForWebUIHttpPostIn" />
+      <wsdl:output message="tns:GenMenuForWebUIHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mas_CostCenter">
+      <wsdl:input message="tns:Mas_CostCenterHttpPostIn" />
+      <wsdl:output message="tns:Mas_CostCenterHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mas_CostCenter_ins">
+      <wsdl:input message="tns:Mas_CostCenter_insHttpPostIn" />
+      <wsdl:output message="tns:Mas_CostCenter_insHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mas_CostCenter_upd">
+      <wsdl:input message="tns:Mas_CostCenter_updHttpPostIn" />
+      <wsdl:output message="tns:Mas_CostCenter_updHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Mas_Department">
+      <wsdl:input message="tns:Mas_DepartmentHttpPostIn" />
+      <wsdl:output message="tns:Mas_DepartmentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserInformation">
+      <wsdl:input message="tns:UserInformationHttpPostIn" />
+      <wsdl:output message="tns:UserInformationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserStation">
+      <wsdl:input message="tns:UserStationHttpPostIn" />
+      <wsdl:output message="tns:UserStationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenAuthorizeMenuGroupForWebUI">
+      <wsdl:input message="tns:GenAuthorizeMenuGroupForWebUIHttpPostIn" />
+      <wsdl:output message="tns:GenAuthorizeMenuGroupForWebUIHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GenAuthorizeMenuGroupForTreeview">
+      <wsdl:input message="tns:GenAuthorizeMenuGroupForTreeviewHttpPostIn" />
+      <wsdl:output message="tns:GenAuthorizeMenuGroupForTreeviewHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Announcement">
+      <wsdl:input message="tns:AnnouncementHttpPostIn" />
+      <wsdl:output message="tns:AnnouncementHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserSystem">
+      <wsdl:input message="tns:UserSystemHttpPostIn" />
+      <wsdl:output message="tns:UserSystemHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthenticationAfisOnSite">
+      <wsdl:input message="tns:checkUserAuthenticationAfisOnSiteHttpPostIn" />
+      <wsdl:output message="tns:checkUserAuthenticationAfisOnSiteHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserEmail">
+      <wsdl:input message="tns:CheckUserEmailHttpPostIn" />
+      <wsdl:output message="tns:CheckUserEmailHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PGToSAPCostCenterMapping">
+      <wsdl:input message="tns:PGToSAPCostCenterMappingHttpPostIn" />
+      <wsdl:output message="tns:PGToSAPCostCenterMappingHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCostCenter">
+      <wsdl:input message="tns:CheckCostCenterHttpPostIn" />
+      <wsdl:output message="tns:CheckCostCenterHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserInDepartment">
+      <wsdl:input message="tns:UserInDepartmentHttpPostIn" />
+      <wsdl:output message="tns:UserInDepartmentHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetButtonControl">
+      <wsdl:input message="tns:GetButtonControlHttpPostIn" />
+      <wsdl:output message="tns:GetButtonControlHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAD">
+      <wsdl:input message="tns:checkUserADHttpPostIn" />
+      <wsdl:output message="tns:checkUserADHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthenSystem">
+      <wsdl:input message="tns:checkUserAuthenSystemHttpPostIn" />
+      <wsdl:output message="tns:checkUserAuthenSystemHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UserAuthorizationSoap" type="tns:UserAuthorizationSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="checkUserAuthentication">
+      <soap:operation soapAction="http://tempuri.org/checkUserAuthentication" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthenticationNoPassword">
+      <soap:operation soapAction="http://tempuri.org/checkUserAuthenticationNoPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthentication2005">
+      <soap:operation soapAction="http://tempuri.org/checkUserAuthentication2005" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthentication2005Nopassword">
+      <soap:operation soapAction="http://tempuri.org/checkUserAuthentication2005Nopassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserAuthorizeCtrl">
+      <soap:operation soapAction="http://tempuri.org/UserAuthorizeCtrl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemCompany">
+      <soap:operation soapAction="http://tempuri.org/SystemCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemStation">
+      <soap:operation soapAction="http://tempuri.org/SystemStation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemURL">
+      <soap:operation soapAction="http://tempuri.org/SystemURL" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSystem">
+      <soap:operation soapAction="http://tempuri.org/GetAllSystem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemGroup">
+      <soap:operation soapAction="http://tempuri.org/SystemGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserAuthorizeGroup">
+      <soap:operation soapAction="http://tempuri.org/UserAuthorizeGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupUser">
+      <soap:operation soapAction="http://tempuri.org/GroupUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupUserN">
+      <soap:operation soapAction="http://tempuri.org/GroupUserN" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupUserNDataSet">
+      <soap:operation soapAction="http://tempuri.org/GroupUserNDataSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenMenuForWebUI">
+      <soap:operation soapAction="http://tempuri.org/GenMenuForWebUI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mas_CostCenter">
+      <soap:operation soapAction="http://tempuri.org/Mas_CostCenter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mas_CostCenter_ins">
+      <soap:operation soapAction="http://tempuri.org/Mas_CostCenter_ins" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mas_CostCenter_upd">
+      <soap:operation soapAction="http://tempuri.org/Mas_CostCenter_upd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mas_Department">
+      <soap:operation soapAction="http://tempuri.org/Mas_Department" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserInformation">
+      <soap:operation soapAction="http://tempuri.org/UserInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserStation">
+      <soap:operation soapAction="http://tempuri.org/UserStation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenAuthorizeMenuGroupForWebUI">
+      <soap:operation soapAction="http://tempuri.org/GenAuthorizeMenuGroupForWebUI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenAuthorizeMenuGroupForTreeview">
+      <soap:operation soapAction="http://tempuri.org/GenAuthorizeMenuGroupForTreeview" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Announcement">
+      <soap:operation soapAction="http://tempuri.org/Announcement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserSystem">
+      <soap:operation soapAction="http://tempuri.org/UserSystem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthenticationAfisOnSite">
+      <soap:operation soapAction="http://tempuri.org/checkUserAuthenticationAfisOnSite" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserEmail">
+      <soap:operation soapAction="http://tempuri.org/CheckUserEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PGToSAPCostCenterMapping">
+      <soap:operation soapAction="http://tempuri.org/PGToSAPCostCenterMapping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCostCenter">
+      <soap:operation soapAction="http://tempuri.org/CheckCostCenter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserInDepartment">
+      <soap:operation soapAction="http://tempuri.org/UserInDepartment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetButtonControl">
+      <soap:operation soapAction="http://tempuri.org/GetButtonControl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAD">
+      <soap:operation soapAction="http://tempuri.org/checkUserAD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthenSystem">
+      <soap:operation soapAction="http://tempuri.org/checkUserAuthenSystem" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UserAuthorizationSoap12" type="tns:UserAuthorizationSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="checkUserAuthentication">
+      <soap12:operation soapAction="http://tempuri.org/checkUserAuthentication" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthenticationNoPassword">
+      <soap12:operation soapAction="http://tempuri.org/checkUserAuthenticationNoPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthentication2005">
+      <soap12:operation soapAction="http://tempuri.org/checkUserAuthentication2005" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthentication2005Nopassword">
+      <soap12:operation soapAction="http://tempuri.org/checkUserAuthentication2005Nopassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserAuthorizeCtrl">
+      <soap12:operation soapAction="http://tempuri.org/UserAuthorizeCtrl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemCompany">
+      <soap12:operation soapAction="http://tempuri.org/SystemCompany" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemStation">
+      <soap12:operation soapAction="http://tempuri.org/SystemStation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemURL">
+      <soap12:operation soapAction="http://tempuri.org/SystemURL" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSystem">
+      <soap12:operation soapAction="http://tempuri.org/GetAllSystem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemGroup">
+      <soap12:operation soapAction="http://tempuri.org/SystemGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserAuthorizeGroup">
+      <soap12:operation soapAction="http://tempuri.org/UserAuthorizeGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupUser">
+      <soap12:operation soapAction="http://tempuri.org/GroupUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupUserN">
+      <soap12:operation soapAction="http://tempuri.org/GroupUserN" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupUserNDataSet">
+      <soap12:operation soapAction="http://tempuri.org/GroupUserNDataSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenMenuForWebUI">
+      <soap12:operation soapAction="http://tempuri.org/GenMenuForWebUI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mas_CostCenter">
+      <soap12:operation soapAction="http://tempuri.org/Mas_CostCenter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mas_CostCenter_ins">
+      <soap12:operation soapAction="http://tempuri.org/Mas_CostCenter_ins" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mas_CostCenter_upd">
+      <soap12:operation soapAction="http://tempuri.org/Mas_CostCenter_upd" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mas_Department">
+      <soap12:operation soapAction="http://tempuri.org/Mas_Department" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserInformation">
+      <soap12:operation soapAction="http://tempuri.org/UserInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserStation">
+      <soap12:operation soapAction="http://tempuri.org/UserStation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenAuthorizeMenuGroupForWebUI">
+      <soap12:operation soapAction="http://tempuri.org/GenAuthorizeMenuGroupForWebUI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenAuthorizeMenuGroupForTreeview">
+      <soap12:operation soapAction="http://tempuri.org/GenAuthorizeMenuGroupForTreeview" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Announcement">
+      <soap12:operation soapAction="http://tempuri.org/Announcement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserSystem">
+      <soap12:operation soapAction="http://tempuri.org/UserSystem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthenticationAfisOnSite">
+      <soap12:operation soapAction="http://tempuri.org/checkUserAuthenticationAfisOnSite" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserEmail">
+      <soap12:operation soapAction="http://tempuri.org/CheckUserEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PGToSAPCostCenterMapping">
+      <soap12:operation soapAction="http://tempuri.org/PGToSAPCostCenterMapping" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCostCenter">
+      <soap12:operation soapAction="http://tempuri.org/CheckCostCenter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserInDepartment">
+      <soap12:operation soapAction="http://tempuri.org/UserInDepartment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetButtonControl">
+      <soap12:operation soapAction="http://tempuri.org/GetButtonControl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAD">
+      <soap12:operation soapAction="http://tempuri.org/checkUserAD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthenSystem">
+      <soap12:operation soapAction="http://tempuri.org/checkUserAuthenSystem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UserAuthorizationHttpGet" type="tns:UserAuthorizationHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="checkUserAuthentication">
+      <http:operation location="/checkUserAuthentication" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthenticationNoPassword">
+      <http:operation location="/checkUserAuthenticationNoPassword" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthentication2005">
+      <http:operation location="/checkUserAuthentication2005" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthentication2005Nopassword">
+      <http:operation location="/checkUserAuthentication2005Nopassword" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserAuthorizeCtrl">
+      <http:operation location="/UserAuthorizeCtrl" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemCompany">
+      <http:operation location="/SystemCompany" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemStation">
+      <http:operation location="/SystemStation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemURL">
+      <http:operation location="/SystemURL" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSystem">
+      <http:operation location="/GetAllSystem" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemGroup">
+      <http:operation location="/SystemGroup" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserAuthorizeGroup">
+      <http:operation location="/UserAuthorizeGroup" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupUser">
+      <http:operation location="/GroupUser" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupUserN">
+      <http:operation location="/GroupUserN" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupUserNDataSet">
+      <http:operation location="/GroupUserNDataSet" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenMenuForWebUI">
+      <http:operation location="/GenMenuForWebUI" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mas_CostCenter">
+      <http:operation location="/Mas_CostCenter" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mas_CostCenter_ins">
+      <http:operation location="/Mas_CostCenter_ins" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mas_CostCenter_upd">
+      <http:operation location="/Mas_CostCenter_upd" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mas_Department">
+      <http:operation location="/Mas_Department" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserInformation">
+      <http:operation location="/UserInformation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserStation">
+      <http:operation location="/UserStation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenAuthorizeMenuGroupForWebUI">
+      <http:operation location="/GenAuthorizeMenuGroupForWebUI" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenAuthorizeMenuGroupForTreeview">
+      <http:operation location="/GenAuthorizeMenuGroupForTreeview" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Announcement">
+      <http:operation location="/Announcement" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserSystem">
+      <http:operation location="/UserSystem" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthenticationAfisOnSite">
+      <http:operation location="/checkUserAuthenticationAfisOnSite" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserEmail">
+      <http:operation location="/CheckUserEmail" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PGToSAPCostCenterMapping">
+      <http:operation location="/PGToSAPCostCenterMapping" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCostCenter">
+      <http:operation location="/CheckCostCenter" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserInDepartment">
+      <http:operation location="/UserInDepartment" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetButtonControl">
+      <http:operation location="/GetButtonControl" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAD">
+      <http:operation location="/checkUserAD" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthenSystem">
+      <http:operation location="/checkUserAuthenSystem" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UserAuthorizationHttpPost" type="tns:UserAuthorizationHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="checkUserAuthentication">
+      <http:operation location="/checkUserAuthentication" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthenticationNoPassword">
+      <http:operation location="/checkUserAuthenticationNoPassword" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthentication2005">
+      <http:operation location="/checkUserAuthentication2005" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthentication2005Nopassword">
+      <http:operation location="/checkUserAuthentication2005Nopassword" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserAuthorizeCtrl">
+      <http:operation location="/UserAuthorizeCtrl" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemCompany">
+      <http:operation location="/SystemCompany" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemStation">
+      <http:operation location="/SystemStation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemURL">
+      <http:operation location="/SystemURL" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSystem">
+      <http:operation location="/GetAllSystem" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SystemGroup">
+      <http:operation location="/SystemGroup" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserAuthorizeGroup">
+      <http:operation location="/UserAuthorizeGroup" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupUser">
+      <http:operation location="/GroupUser" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupUserN">
+      <http:operation location="/GroupUserN" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GroupUserNDataSet">
+      <http:operation location="/GroupUserNDataSet" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenMenuForWebUI">
+      <http:operation location="/GenMenuForWebUI" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mas_CostCenter">
+      <http:operation location="/Mas_CostCenter" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mas_CostCenter_ins">
+      <http:operation location="/Mas_CostCenter_ins" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mas_CostCenter_upd">
+      <http:operation location="/Mas_CostCenter_upd" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Mas_Department">
+      <http:operation location="/Mas_Department" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserInformation">
+      <http:operation location="/UserInformation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserStation">
+      <http:operation location="/UserStation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenAuthorizeMenuGroupForWebUI">
+      <http:operation location="/GenAuthorizeMenuGroupForWebUI" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GenAuthorizeMenuGroupForTreeview">
+      <http:operation location="/GenAuthorizeMenuGroupForTreeview" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Announcement">
+      <http:operation location="/Announcement" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserSystem">
+      <http:operation location="/UserSystem" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthenticationAfisOnSite">
+      <http:operation location="/checkUserAuthenticationAfisOnSite" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUserEmail">
+      <http:operation location="/CheckUserEmail" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PGToSAPCostCenterMapping">
+      <http:operation location="/PGToSAPCostCenterMapping" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCostCenter">
+      <http:operation location="/CheckCostCenter" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserInDepartment">
+      <http:operation location="/UserInDepartment" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetButtonControl">
+      <http:operation location="/GetButtonControl" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAD">
+      <http:operation location="/checkUserAD" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserAuthenSystem">
+      <http:operation location="/checkUserAuthenSystem" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserAuthorization">
+    <wsdl:port name="UserAuthorizationSoap" binding="tns:UserAuthorizationSoap">
+      <soap:address location="http://developer.bangkokair.pg:10001/UserAuthorization.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UserAuthorizationSoap12" binding="tns:UserAuthorizationSoap12">
+      <soap12:address location="http://developer.bangkokair.pg:10001/UserAuthorization.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UserAuthorizationHttpGet" binding="tns:UserAuthorizationHttpGet">
+      <http:address location="http://developer.bangkokair.pg:10001/UserAuthorization.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UserAuthorizationHttpPost" binding="tns:UserAuthorizationHttpPost">
+      <http:address location="http://developer.bangkokair.pg:10001/UserAuthorization.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
