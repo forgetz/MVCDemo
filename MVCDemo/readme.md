@@ -9,8 +9,10 @@ MVC Demo
 -- [ ] list product data
 -- [ ] add/edit product data
 -- [ ] delete data
--- [ ] call stored proc (with out without return data)
+-- [ ] call stored proc
 [ ] datatables
 [ ] generate data to pdf excel using datatables
 [ ] connect to webservice pgmenu http://developer.bangkokair.pg:10001/UserAuthorization.asmx
 -- [ ] call webservice
+
+[ ] upload file

@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<form method="post" enctype="multipart/form-data">
+    select :
+    <input type="file" id="fileupload" name="fileupload" />
+    <br />
+    <input type="submit" class="btn btn-primary" />
+</form>
+
+<br />
+
+@ViewData["error_message"]
