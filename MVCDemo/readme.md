@@ -2,7 +2,7 @@ MVC Demo
 
 [ ] new project
 [ ] partial view
-[ ] connect to database using entityframework
+[ ] connect to database using entityframework (10.10.7.35 saranpong MVCDemo)
 -- [ ] nuget install entityframework
 -- [ ] create entity data model connection
 -- [ ] create services for products
@@ -16,3 +16,4 @@ MVC Demo
 -- [ ] call webservice
 
 [ ] upload file
+[ ] export excel using npoi
